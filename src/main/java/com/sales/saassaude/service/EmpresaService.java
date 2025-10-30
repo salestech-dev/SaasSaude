@@ -36,7 +36,7 @@ public class EmpresaService {
     }
 
     public List<Empresa> listarAtivas() {
-        return repo.findByAtivaTrue();
+        return repo.findByAtivoTrue();
     }
 
     public Empresa atualizar(Long id, Empresa dadosAtualizados) {

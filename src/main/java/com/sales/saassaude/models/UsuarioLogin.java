@@ -18,7 +18,7 @@ public class UsuarioLogin {
     @Column(nullable = false)
     private EnumRole role;
 
-    @Column(nullable = false)
+    @JoinColumn(name = "empresa_id")
     @ManyToOne
     private Empresa empresa;
 

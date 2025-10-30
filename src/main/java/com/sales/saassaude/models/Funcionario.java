@@ -11,8 +11,8 @@ public class Funcionario {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long Id;
 
-    @Column
     @ManyToOne
+    @JoinColumn(name = "funcionario_id")
     private Funcionario funcionario;
 
     @Column(nullable = false)
@@ -24,12 +24,13 @@ public class Funcionario {
     @Column(nullable = false)
     private String cargo;
 
-    @Column()
     private LocalDateTime dataAdmissao;
 
-    @Column()
+    @JoinColumn(name = "empresa_id")
     @ManyToOne
     private Empresa empresa;
+
+    private String departamento;
 
     @Column(nullable = false)
     private boolean ativo;

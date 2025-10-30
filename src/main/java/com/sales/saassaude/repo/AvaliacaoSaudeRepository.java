@@ -7,7 +7,9 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 import com.sales.saassaude.models.AvaliacaoSaude;
 import com.sales.saassaude.models.EnumTipoAvaliacao;
+import org.springframework.stereotype.Repository;
 
+@Repository
 public interface AvaliacaoSaudeRepository extends JpaRepository<AvaliacaoSaude, Long> {
     List<AvaliacaoSaude> findByFuncionarioId(Long funcionarioId);
     List<AvaliacaoSaude> findByTipoAvaliacao(EnumTipoAvaliacao tipoAvaliacao);

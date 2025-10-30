@@ -14,11 +14,14 @@ import com.sales.saassaude.repo.FuncionarioRepository;
 @Service
 public class AvaliacaoService {
 
-    @Autowired
-    private AvaliacaoSaudeRepository avaliacaoRepository;
+    private final AvaliacaoSaudeRepository avaliacaoRepository;
 
-    @Autowired
-    private FuncionarioRepository funcionarioRepository;
+    private final FuncionarioRepository funcionarioRepository;
+
+    public AvaliacaoService(AvaliacaoSaudeRepository avaliacaoRepository, FuncionarioRepository funcionarioRepository) {
+        this.avaliacaoRepository = avaliacaoRepository;
+        this.funcionarioRepository = funcionarioRepository;
+    }
 
     public AvaliacaoSaude registrarAvaliacao(AvaliacaoSaude avaliacao) {
         // 1. VALIDAR SE FUNCIONÁRIO EXISTE

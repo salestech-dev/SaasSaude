@@ -26,6 +26,9 @@ public class AvaliacaoController {
         }
     }
 
+
+
+
     // BUSCAR AVALIAÇÃO POR ID
     @GetMapping("/{id}")
     public ResponseEntity<AvaliacaoSaude> buscarPorId(@PathVariable Long id) {
